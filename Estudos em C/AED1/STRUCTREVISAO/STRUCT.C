@@ -21,9 +21,9 @@ int main() {
     Empresa emp;
 
     inserirnome(&emp);
-    printf("Seu Nome: %s\n", emp.nome);
     insereridade(&emp);
-    printf("Idade: %d\n", emp.idade);
+    printf("Seu Nome: %s", emp.nome);
+    printf("Idade: %d", emp.idade);
 
     return 0;
 }
@@ -31,15 +31,11 @@ int main() {
 void inserirnome(Empresa *emp) {
     printf("Digite seu nome, por favor: ");
     fgets(emp->nome, tam, stdin);
-    printf("\n");
 
 }
 
 void insereridade(Empresa *emp) {
     printf("Insira sua idade: ");
     scanf("%d", &emp->idade);
-    printf("\n");
 
-    // Limpa o buffer de entrada para evitar problemas em leituras subsequentes
-    while (getchar() != '\n');
 }
